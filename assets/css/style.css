@@ -687,7 +687,7 @@ section {
 
 .portfolio-details .portfolio-info {
   padding: 30px;
-  box-shadow: 0px 0 30px rgba(5, 13, 24, 0.08);
+  box-shadow: 0 0 30px rgba(5, 13, 24, 0.08);
 }
 
 .portfolio-details .portfolio-info h3 {
@@ -725,58 +725,66 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
-  margin-bottom: 20px;
-}
 
-.services .icon {
-  float: left;
+:root{ --main-color: #149ddd; }
+.serviceBox{
+  background-color: #fff;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 40px 20px;
+  border-radius: 20px;
+  box-shadow: 5px 0 12px rgba(0,0,0,0.2),-7px 15px var(--main-color);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s ease-in-out;
+}
+.serviceBox:before{
+  content: '';
+  background-color: var(--main-color);
+  height: 70%;
+  width: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  clip-path: polygon(0% 0%,100% 15%,100% 85%,0% 100%);
+}
+.serviceBox .service-icon{
+  color: var(--main-color);
+  font-size: 40px;
+  margin: 0 auto 20px;
+  border: 1px solid var(--main-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 54px;
-  height: 54px;
-  background: #149ddd;
-  border-radius: 50%;
-  transition: 0.5s;
-  border: 1px solid #149ddd;
+  border-radius: 5%;
+  width: 60px;
+  height: 60px;
+}
+.serviceBox .title{
+  color: var(--main-color);
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 15px;
+}
+.serviceBox:hover {
+  transform: scale(1.05);
+  transition: transform 0.4s ease;
 }
 
-.services .icon i {
-  color: #fff;
-  font-size: 24px;
-  line-height: 0;
+.serviceBox .description{
+  color: #777;
+  font-size: 13px;
+  line-height: 22px;
+  margin: 0;
 }
-
-.services .icon-box:hover .icon {
-  background: #fff;
+.serviceBox.yellow{ --main-color: #149ddd; }
+.serviceBox.blue{ --main-color: #06CDEA; }
+.serviceBox.darkblue{ --main-color: #045582; }
+@media only screen and (max-width: 1199px){
+  .serviceBox{ margin: 0 0 30px; }
 }
-
-.services .icon-box:hover .icon i {
-  color: #149ddd;
-}
-
-.services .title {
-  margin-left: 80px;
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 18px;
-}
-
-.services .title a {
-  color: #343a40;
-}
-
-.services .title a:hover {
-  color: #149ddd;
-}
-
-.services .description {
-  margin-left: 80px;
-  line-height: 24px;
-  font-size: 14px;
-}
-
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
@@ -837,7 +845,7 @@ section {
   position: relative;
   margin-bottom: 35px;
   border-radius: 6px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .testimonials .testimonial-item p::after {
