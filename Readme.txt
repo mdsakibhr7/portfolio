@@ -1,6 +1,4 @@
-Thanks for downloading this template!
-
-Template Name: iPortfolio
-Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Template Name: Sakib Portfolio
+Template URL: https://Sakib
+Author: Sakib
+License: https://sakib
