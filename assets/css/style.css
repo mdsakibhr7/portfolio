@@ -417,6 +417,8 @@ section {
 .facts .count-box {
   padding: 30px;
   width: 100%;
+  background: #fff4f4;
+  border-radius: 5px;
 }
 
 .facts .count-box i {
