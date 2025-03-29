@@ -799,3 +799,66 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  const sections = document.querySelectorAll('.section');
+  
+  links.forEach(link => {
+      link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+              // Apply smudge effect with GSAP for smoother transition
+              gsap.to(sections, {
+                  duration: 0.3,
+                  filter: 'blur(5px)',
+                  opacity: 0.8,
+                  ease: 'power2.out'
+              });
+              
+              // Smooth scroll with GSAP
+              gsap.to(window, {
+                  duration: 1,
+                  scrollTo: {
+                      y: targetElement,
+                      offsetY: 60
+                  },
+                  ease: 'power2.inOut',
+                  onComplete: () => {
+                      // Remove smudge effect
+                      gsap.to(sections, {
+                          duration: 0.5,
+                          filter: 'blur(0px)',
+                          opacity: 1,
+                          ease: 'power2.out'
+                      });
+                  }
+              });
+          }
+      });
+  });
+  
+  // Smudge effect during manual scrolling
+  let isScrolling;
+  window.addEventListener('scroll', function() {
+      window.clearTimeout(isScrolling);
+      
+      gsap.to(sections, {
+          duration: 0.2,
+          filter: 'blur(3px)',
+          opacity: 0.9,
+          ease: 'power2.out'
+      });
+      
+      isScrolling = setTimeout(function() {
+          gsap.to(sections, {
+              duration: 0.5,
+              filter: 'blur(0px)',
+              opacity: 1,
+              ease: 'power2.out'
+          });
+      }, 100);
+  }, false);
+});
