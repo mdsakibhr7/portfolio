@@ -9,6 +9,26 @@
     <meta name="description" content="Reeni is a modern personal portfolio template for designers, developers, content writer, cleaner, programmer, fashion designer, model, Influencer and freelancers. Fully responsive, SEO-friendly, Bootstrap and easy to customize.">
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
     <title>SakibPro - Freelancer & Developer | Personal Portfolio</title>
+
+    <!-- Clean-URL redirect: index.html -> /portfolio/
+         Runs ONLY on GitHub Pages (hostname contains github.io).
+         On localhost / any other host this is skipped, so you will
+         NOT get "Cannot GET /portfolio/" while testing locally. -->
+    <script>
+    (function () {
+        try {
+            var host = location.hostname;
+            var isGithubPages = host.indexOf('github.io') !== -1;
+            if (isGithubPages && /\/index\.html$/i.test(location.pathname)) {
+                var cleanPath = location.pathname.replace(/index\.html$/i, '');
+                location.replace(cleanPath + location.search + location.hash);
+            }
+        } catch (e) {
+            // fail silently, never block page render
+        }
+    })();
+    </script>
+
     <!-- Bootstrap min css -->
     <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
     <link rel="stylesheet" href="assets/css/plugins/swiper.css">
@@ -28,7 +48,7 @@
                 <div class="col-lg-12">
                     <div class="header-content">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/portfolio/">
                                 <img class="logo-dark" src="assets/images/logo/sakib_logo.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                                 <img class="logo-white" src="assets/images/logo/sakib_logo.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                                 <!-- <h2>SAKIB</h2> -->
@@ -87,7 +107,7 @@
         <div class="tmp-sidebar-area tmp_side_bar">
             <div class="inner">
                 <div class="top-area">
-                    <a href="index.html" class="logo">
+                    <a href="/portfolio/" class="logo">
                         <!-- <img class="logo-dark" src="assets/images/logo/white-logo-reeni.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                         <img class="logo-white" src="assets/images/logo/logo-white.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers"> -->
                         <h2>SAKIB</h2>
@@ -100,7 +120,7 @@
                 </div>
                 <div class="content-wrapper">
                     <div class="image-area-feature">
-                        <a href="index.html">
+                        <a href="/portfolio/">
                             <img src="assets/images/testimonial/Screenshot_7.png" alt="personal-logo">
                         </a>
                     </div>
@@ -160,7 +180,7 @@
             <div class="inner">
                 <div class="header-top">
                     <div class="logo">
-                        <a href="index.html" class="logo-area">
+                        <a href="/portfolio/" class="logo-area">
                             <img class="logo-dark" src="assets/images/logo/white-logo-reeni.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                             <img class="logo-white" src="assets/images/logo/logo-white.png" alt="Reeni - Personal Portfolio HTML Template for developers and freelancers">
                         </a>
