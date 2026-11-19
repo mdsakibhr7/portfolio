@@ -8,6 +8,7 @@
     @apply bg-paper text-ink font-sans antialiased;
   }
   ::selection { background: #FF7A1A; color: #fff; }
+  html { overflow-x: hidden; }
   :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper rounded-md; }
 }
 
@@ -21,18 +22,18 @@
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm font-medium transition duration-300 whitespace-nowrap;
   }
   .btn-dark { @apply bg-ink text-paper hover:bg-accent hover:-translate-y-0.5 hover:shadow-soft; }
-  .btn-line { @apply border border-ink/15 bg-white/60 backdrop-blur hover:border-ink hover:-translate-y-0.5; }
+  .btn-line { @apply border border-ink/15 bg-panel/60 text-ink backdrop-blur hover:border-accent hover:-translate-y-0.5; }
   .card {
-    @apply rounded-3xl border border-ink/10 bg-white/70 backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-soft;
+    @apply rounded-3xl border border-ink/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-soft;
   }
 }
 
 /* Soft glow behind the hero, inspired by warm gradient landing pages */
 .hero-glow {
   background:
-    radial-gradient(60% 50% at 50% 20%, rgba(255, 226, 189, 0.95), transparent 70%),
-    radial-gradient(40% 40% at 90% 60%, rgba(255, 122, 26, 0.18), transparent 70%),
-    linear-gradient(#FAFAF7, #FAFAF7);
+    radial-gradient(60% 50% at 50% 20%, rgba(255, 122, 26, 0.22), transparent 70%),
+    radial-gradient(40% 40% at 90% 60%, rgba(124, 156, 255, 0.14), transparent 70%),
+    #07090F;
 }
 
 .marquee-track { animation: marquee 36s linear infinite; }
@@ -47,3 +48,10 @@
 @keyframes travel { 0% { left: 6%; opacity: 0; } 10%, 90% { opacity: 1; } 100% { left: 94%; opacity: 0; } }
 .flow-dot { animation: travel 5s linear infinite; }
 @media (prefers-reduced-motion: reduce) { .flow-dot { animation: none; opacity: 0; } }
+
+/* Modal animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes popIn { from { opacity: 0; transform: translateY(40px) scale(.98); } to { opacity: 1; transform: none; } }
+.anim-fade { animation: fadeIn .3s ease both; }
+.anim-pop { animation: popIn .45s cubic-bezier(.22,.61,.36,1) both; }
+@media (prefers-reduced-motion: reduce) { .anim-fade, .anim-pop { animation: none; } }

@@ -14,7 +14,7 @@ const validators = {
 
 function Field({ label, name, value, error, onChange, onBlur, textarea }) {
   const base =
-    "w-full rounded-2xl border bg-white px-4 py-3.5 text-sm outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15";
+    "w-full rounded-2xl border bg-panel px-4 py-3.5 text-sm outline-none transition focus:border-accent focus:ring-4 focus:ring-accent/15";
   const border = error ? "border-red-400" : "border-ink/10";
   const common = { id: name, name, value, onChange, onBlur, "aria-invalid": Boolean(error), "aria-describedby": error ? `${name}-err` : undefined };
   return (

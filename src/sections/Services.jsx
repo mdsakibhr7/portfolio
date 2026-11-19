@@ -11,7 +11,7 @@ export default function Services() {
         <ul className="divide-y divide-ink/10 border-y border-ink/10">
           {services.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.04}>
-              <li className="group grid cursor-default items-center gap-4 py-8 transition duration-500 hover:bg-white/60 md:grid-cols-[80px_1.2fr_1fr] md:px-4">
+              <li className="group grid cursor-default items-center gap-4 py-8 transition duration-500 hover:bg-panel/60 md:grid-cols-[80px_1.2fr_1fr] md:px-4">
                 <span className="text-sm font-medium text-muted">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="h-display text-3xl md:text-4xl">{s.title}</h3>
                 <div className="flex items-center justify-between gap-6">

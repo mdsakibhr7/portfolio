@@ -12,7 +12,7 @@ export default function Hero() {
         {/* Availability pill */}
         {profile.available && (
           <Reveal>
-            <span className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm shadow-soft">
+            <span className="inline-flex items-center gap-2 rounded-full bg-panel px-4 py-2 text-sm shadow-soft">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-lime" />
@@ -70,7 +70,7 @@ export default function Hero() {
       </div>
 
       {/* Marquee */}
-      <div className="mt-20 overflow-hidden border-y border-ink/10 bg-white/50 py-5" aria-hidden="true">
+      <div className="mt-20 overflow-hidden border-y border-ink/10 bg-panel/50 py-5" aria-hidden="true">
         <div className="marquee-track flex w-max gap-12">
           {loop.map((item, i) => (
             <span key={i} className="h-display whitespace-nowrap text-3xl text-ink/40">

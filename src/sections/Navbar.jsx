@@ -25,8 +25,8 @@ export default function Navbar() {
         aria-label="Main navigation"
         className={`mx-auto flex h-16 w-[min(1200px,100%)] items-center justify-between rounded-full border px-5 transition duration-500 ${
           scrolled
-            ? "border-ink/10 bg-white/80 shadow-soft backdrop-blur-xl"
-            : "border-transparent bg-white/40 backdrop-blur-md"
+            ? "border-ink/10 bg-panel/80 shadow-soft backdrop-blur-xl"
+            : "border-transparent bg-panel/40 backdrop-blur-md"
         }`}
       >
         <a href="#top" className="font-serif text-2xl italic">
@@ -63,7 +63,7 @@ export default function Navbar() {
       {open && (
         <div
           id="mobile-menu"
-          className="mx-auto mt-2 w-[min(1200px,100%)] rounded-3xl border border-ink/10 bg-white/95 p-3 shadow-soft backdrop-blur-xl md:hidden"
+          className="mx-auto mt-2 w-[min(1200px,100%)] rounded-3xl border border-ink/10 bg-panel/95 p-3 shadow-soft backdrop-blur-xl md:hidden"
         >
           {navItems.map((item) => (
             <a
