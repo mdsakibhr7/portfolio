@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+  }
+  ::selection { background: #FF7A1A; color: #fff; }
+  :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper rounded-md; }
+}
+
+@layer components {
+  .section { @apply py-24 md:py-32 relative; }
+  .container-x { @apply mx-auto w-[min(1200px,90%)]; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent; }
+  .h-display { @apply font-display uppercase leading-[0.9] tracking-wide; }
+  .h-serif { @apply font-serif italic font-normal tracking-tight; }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 h-12 text-sm font-medium transition duration-300 whitespace-nowrap;
+  }
+  .btn-dark { @apply bg-ink text-paper hover:bg-accent hover:-translate-y-0.5 hover:shadow-soft; }
+  .btn-line { @apply border border-ink/15 bg-white/60 backdrop-blur hover:border-ink hover:-translate-y-0.5; }
+  .card {
+    @apply rounded-3xl border border-ink/10 bg-white/70 backdrop-blur transition duration-500 hover:-translate-y-1 hover:shadow-soft;
+  }
+}
+
+/* Soft glow behind the hero, inspired by warm gradient landing pages */
+.hero-glow {
+  background:
+    radial-gradient(60% 50% at 50% 20%, rgba(255, 226, 189, 0.95), transparent 70%),
+    radial-gradient(40% 40% at 90% 60%, rgba(255, 122, 26, 0.18), transparent 70%),
+    linear-gradient(#FAFAF7, #FAFAF7);
+}
+
+.marquee-track { animation: marquee 36s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; }
+}
+
+/* Travelling dot along the AI → WordPress flow line (desktop) */
+@keyframes travel { 0% { left: 6%; opacity: 0; } 10%, 90% { opacity: 1; } 100% { left: 94%; opacity: 0; } }
+.flow-dot { animation: travel 5s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .flow-dot { animation: none; opacity: 0; } }
