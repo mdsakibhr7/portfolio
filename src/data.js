@@ -49,6 +49,7 @@ export const stats = [
   { value: "100+", label: "Live websites" },
 ];
 
+
 export const flowSteps = [
   { tag: "01 · Source", title: "Any input", desc: "Claude or Lovable prototype, Figma file, screenshot, or an existing website you want rebuilt." },
   { tag: "02 · Analyze", title: "Structure", desc: "Break the design into sections, typography, colors and responsive behaviour before building starts." },
