@@ -46,7 +46,7 @@ export const marqueeItems = [
 export const stats = [
   { value: "3+", label: "Years of WordPress experience" },
   { value: "50+", label: "Projects successfully delivered" },
-  { value: "7", label: "Live websites" },
+  { value: "100+", label: "Live websites" },
 ];
 
 export const flowSteps = [
