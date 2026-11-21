@@ -45,7 +45,7 @@ export default function Hero() {
           <Reveal delay={0.25} className="pb-2">
             <p className="max-w-sm text-base leading-relaxed text-ink/75">{profile.intro}</p>
             <p className="mt-3 text-sm font-medium">
-              <span className="text-accent">▲</span> {profile.title} · {profile.location}
+              <span className="text-accent">▲</span> {profile.title}
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
               <a href="#flow" className="btn btn-dark">
