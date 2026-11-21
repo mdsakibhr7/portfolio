@@ -80,14 +80,73 @@ export const skillGroups = [
   { name: "Automation", items: ["n8n", "API integration basics"], note: "currently learning" },
 ];
 
+/* Live projects. Title, description and platform come from each site's own
+   title and meta description. "credit" is shown only where the footer confirms it. */
 export const liveProjects = [
-  { title: "aatroxcommunications.com.au", desc: "Live website", url: "https://aatroxcommunications.com.au/", domain: "aatroxcommunications.com.au", tags: ["Live website"] },
-  { title: "aatroxcommunications.co.nz", desc: "Live website", url: "https://aatroxcommunications.co.nz/", domain: "aatroxcommunications.co.nz", tags: ["Live website"] },
-  { title: "pushpromotions.co.nz", desc: "Live website", url: "https://pushpromotions.co.nz/", domain: "pushpromotions.co.nz", tags: ["Live website"] },
-  { title: "ozict.com.au", desc: "Live website", url: "https://ozict.com.au/", domain: "ozict.com.au", tags: ["Live website"] },
-  { title: "nafcorp.com.au", desc: "Live website", url: "https://www.nafcorp.com.au/", domain: "nafcorp.com.au", tags: ["Live website"] },
-  { title: "catansg.com", desc: "Live website", url: "https://catansg.com/", domain: "catansg.com", tags: ["Live website"] },
-  { title: "infratech.digital", desc: "Live website", url: "https://infratech.digital/", domain: "infratech.digital", tags: ["Live website"] },
+  {
+    sector: "Telecom",
+    category: "VoIP & Phone Systems · Australia",
+    title: "Aatrox Communications",
+    desc: "Australian-owned 3CX Titanium Partner & SIP provider since 2006. Cloud and on-premise phone systems, CRM integrations, and 24/7 local support.",
+    url: "https://aatroxcommunications.com.au/",
+    domain: "aatroxcommunications.com.au",
+    tags: ["WordPress", "3CX", "SIP Trunking"],
+  },
+  {
+    sector: "Telecom",
+    category: "SIP Trunking · New Zealand",
+    title: "Aatrox Communications NZ",
+    desc: "SIP trunk providers for New Zealand businesses, with phone systems and trunking pricing plans.",
+    url: "https://aatroxcommunications.co.nz/",
+    domain: "aatroxcommunications.co.nz",
+    tags: ["WordPress", "Elementor", "SIP Trunking"],
+    credit: "Website designed by NAFCORP",
+  },
+  {
+    sector: "Promotional & Print",
+    category: "Promotional Products · New Zealand",
+    title: "Push Promotions",
+    desc: "Custom promotional products, branded apparel and printing services to elevate your brand with speed and quality.",
+    url: "https://pushpromotions.co.nz/",
+    domain: "pushpromotions.co.nz",
+    tags: ["WordPress", "Product Catalog"],
+  },
+  {
+    sector: "Telecom",
+    category: "Telecom · Australia",
+    title: "OZICT",
+    desc: "Scalable, affordable telecom solutions for Australian businesses, with phone systems and NBN plans.",
+    url: "https://ozict.com.au/",
+    domain: "ozict.com.au",
+    tags: ["WordPress", "3CX", "NBN"],
+  },
+  {
+    sector: "Web & Automation",
+    category: "Web Agency · Australia",
+    title: "NAFCORP Technologies",
+    desc: "Builds professional websites, custom web applications and practical AI website automation for Australian businesses.",
+    url: "https://www.nafcorp.com.au/",
+    domain: "nafcorp.com.au",
+    tags: ["Web Design", "AI Automation"],
+  },
+  {
+    sector: "Strategy",
+    category: "Business Strategy",
+    title: "Catan Strategy Group",
+    desc: "Creates and executes plans to reach business goals, covering staffing, systems, exit preparation and revenue generation.",
+    url: "https://catansg.com/",
+    domain: "catansg.com",
+    tags: ["Strategy", "Systems", "Staffing"],
+  },
+  {
+    sector: "IT Architecture",
+    category: "IT Architecture",
+    title: "Infratech Digital",
+    desc: "Technology foundations partner. Enterprise architecture of IT infrastructure, with a focus on AI readiness.",
+    url: "https://infratech.digital/",
+    domain: "infratech.digital",
+    tags: ["WordPress", "Elementor", "IT Architecture"],
+  },
 ];
 
 export const githubProjects = [

@@ -55,3 +55,13 @@
 .anim-fade { animation: fadeIn .3s ease both; }
 .anim-pop { animation: popIn .45s cubic-bezier(.22,.61,.36,1) both; }
 @media (prefers-reduced-motion: reduce) { .anim-fade, .anim-pop { animation: none; } }
+
+/* Sector filter chips */
+@layer components {
+  .chip {
+    @apply inline-flex h-10 items-center gap-2 rounded-full border border-white/15 bg-panel px-4 text-sm font-medium text-ink/80 transition duration-200 hover:border-cyan-300/60 hover:text-ink;
+  }
+  .chip sup { @apply text-[11px] text-muted; }
+  .chip[aria-pressed="true"] { @apply border-cyan-300 bg-cyan-300 text-paper; }
+  .chip[aria-pressed="true"] sup { @apply text-paper/70; }
+}
