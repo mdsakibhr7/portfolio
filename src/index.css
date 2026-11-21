@@ -2,13 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- Hide scrollbar (page still scrolls with mouse, touch and keyboard) ---------- */
+html {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* old Edge */
+  overflow-x: hidden;         /* stops a sideways scrollbar appearing */
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;              /* Chrome, Safari, Edge */
+  width: 0;
+  height: 0;
+}
+
 @layer base {
   html { scroll-behavior: smooth; scroll-padding-top: 96px; }
   body {
     @apply bg-paper text-ink font-sans antialiased;
   }
   ::selection { background: #FF7A1A; color: #fff; }
-  html { overflow-x: hidden; }
   :focus-visible { @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-paper rounded-md; }
 }
 
@@ -26,6 +43,12 @@
   .card {
     @apply rounded-3xl border border-ink/10 bg-gradient-to-b from-white/[0.05] to-white/[0.015] backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-white/20 hover:shadow-soft;
   }
+  .chip {
+    @apply inline-flex h-10 items-center gap-2 rounded-full border border-white/15 bg-panel px-4 text-sm font-medium text-ink/80 transition duration-200 hover:border-cyan-300/60 hover:text-ink;
+  }
+  .chip sup { @apply text-[11px] text-muted; }
+  .chip[aria-pressed="true"] { @apply border-cyan-300 bg-cyan-300 text-paper; }
+  .chip[aria-pressed="true"] sup { @apply text-paper/70; }
 }
 
 /* Soft glow behind the hero, inspired by warm gradient landing pages */
@@ -39,29 +62,18 @@
 .marquee-track { animation: marquee 36s linear infinite; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .marquee-track { animation: none; }
-}
-
 /* Travelling dot along the AI → WordPress flow line (desktop) */
 @keyframes travel { 0% { left: 6%; opacity: 0; } 10%, 90% { opacity: 1; } 100% { left: 94%; opacity: 0; } }
 .flow-dot { animation: travel 5s linear infinite; }
-@media (prefers-reduced-motion: reduce) { .flow-dot { animation: none; opacity: 0; } }
 
 /* Modal animations */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 @keyframes popIn { from { opacity: 0; transform: translateY(40px) scale(.98); } to { opacity: 1; transform: none; } }
 .anim-fade { animation: fadeIn .3s ease both; }
 .anim-pop { animation: popIn .45s cubic-bezier(.22,.61,.36,1) both; }
-@media (prefers-reduced-motion: reduce) { .anim-fade, .anim-pop { animation: none; } }
 
-/* Sector filter chips */
-@layer components {
-  .chip {
-    @apply inline-flex h-10 items-center gap-2 rounded-full border border-white/15 bg-panel px-4 text-sm font-medium text-ink/80 transition duration-200 hover:border-cyan-300/60 hover:text-ink;
-  }
-  .chip sup { @apply text-[11px] text-muted; }
-  .chip[aria-pressed="true"] { @apply border-cyan-300 bg-cyan-300 text-paper; }
-  .chip[aria-pressed="true"] sup { @apply text-paper/70; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track, .flow-dot, .anim-fade, .anim-pop { animation: none; }
+  .flow-dot { opacity: 0; }
 }
